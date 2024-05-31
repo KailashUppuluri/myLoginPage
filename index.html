@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration and Login System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Welcome to the login/registration page</h1>
+    <div id="formContainer">
+        <button onclick="showRegistration()">Register</button>
+        <button onclick="showLogin()">Login</button>
+
+        <div id="registrationForm" style="display: none;">
+            <form onsubmit="return validateRegistration();">
+                <h2>Register</h2>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" pattern="[0-9]{10}" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <input type="checkbox" id="terms" required>
+                <label for="terms">Agree to <a href="#" onclick="showTerms(); return false;">Terms and Conditions</a></label>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div id="loginForm" style="display: none;">
+            <form onsubmit="return validateLogin();">
+                <h2>Login</h2>
+                <label for="loginEmail">Username or Email:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="termsModal" style="display:none;">
+        <p>Terms and Conditions
+
+		Welcome to the Application! By using our services, you agree to these terms. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer, and you agree to accept responsibility for all activities that occur under your account or password. Do not misuse our services, for example, by interfering with them or accessing them using a method other than the interface and the instructions that we provide. We may suspend or stop providing our services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.</p>
+        <button onclick="hideTerms();">Close</button>
+    </div>
+</body>
+</html>
